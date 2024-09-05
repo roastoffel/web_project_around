@@ -1,46 +1,103 @@
 .profile {
   margin: 40px auto 50px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 120px auto 150px;
+  grid-template-areas:
+    "avatar name-btn btn-add"
+    "avatar occupation btn-add";
+  column-gap: 30px;
 }
 
 .profile__avatar {
   max-width: 120px;
+  box-sizing: border-box;
+  grid-area: avatar;
 }
 
-.profile__info {
-  padding-left: 30px;
-  color: #ffffff;
+.profile__name_btn {
+  display: flex;
+  flex-direction: row;
+  grid-area: name-btn;
 }
 
 .profile__info_name {
   font-size: 42px;
+  color: #ffffff;
   font-family: "Inter Medium", sans-serif;
+  max-width: 375px;
   margin: 0;
-  padding-bottom: 10px;
-}
-
-.profile__info_occupation {
-  font-size: 18px;
-  font-family: "Inter Regular", sans-serif;
-  margin: 0;
+  padding: 0 0 16px 0;
+  align-self: flex-end;
 }
 
 .profile__edit-btn {
   max-width: 24px;
-  margin: 38px 0 59px 18px;
-  padding: 0;
   background: none;
   border: none;
   cursor: pointer;
+  margin: 0 0 20px 18px;
+  padding: 0;
+  align-self: flex-end;
 }
 
-.profile__add-btn {
+.profile__info_occupation {
+  font-size: 18px;
+  color: #ffffff;
+  font-family: "Inter Regular", sans-serif;
+  margin: 0;
+  grid-area: occupation;
+}
+
+.profile__add-btn_peq {
   max-width: 150px;
-  margin-left: 165px;
   background: none;
   border: none;
   cursor: pointer;
   padding: 0;
+  grid-area: btn-add;
+}
+
+.profile__add-btn_gde {
+  max-width: 282px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  grid-area: btn-add;
+  display: none;
+}
+
+@media screen and (max-width: 796px) {
+  .profile {
+    margin: 42px auto 36px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile__info_name {
+    font-size: 22px;
+    padding: 30px 0 14px 0;
+  }
+
+  .profile__edit-btn {
+    margin: 0 0 14px 10px;
+  }
+
+  .profile__edit-btn_img {
+    max-width: 18px;
+  }
+
+  .profile__info_occupation {
+    font-size: 14px;
+    padding: 0 0 36px 0;
+  }
+
+  .profile__add-btn_peq {
+    display: none;
+  }
+
+  .profile__add-btn_gde {
+    display: block;
+  }
 }
