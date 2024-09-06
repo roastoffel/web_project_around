@@ -19,6 +19,22 @@
   max-width: 100%;
 }
 
+.content__card_btn-like {
+  background-color: transparent;
+  background-image: url(/images/heart.svg);
+  background-repeat: no-repeat;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  bottom: 26px;
+}
+
+.content__card_btn-like:active {
+  background-image: url(/images/heart-filled.svg);
+}
+
 .content__card_title {
   font-family: "Inter Black", sans-serif;
   font-size: 24px;
@@ -32,8 +48,8 @@
   overflow: hidden;
 }
 
-.content__card_like {
+/* .content__card_like {
   position: absolute;
   right: 20px;
   bottom: 30px;
-}
+} */
