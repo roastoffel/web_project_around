@@ -13,6 +13,40 @@
         <img src="/images/logo.svg" class="logo" />
         <div class="line"></div>
       </header>
+
+      <section id="popup" class="popup">
+        <div class="popup__container">
+          <button type="button" class="popup__container_close-btn">
+            <img
+              src="/images/close-icon.svg"
+              alt="Close icon"
+              class="popup__container_close-icon"
+            />
+          </button>
+          <h4 class="popup__container_title">Editer perfil</h4>
+          <form class="popup__form form">
+            <fieldset class="form__fieldset">
+              <input
+                type="text"
+                id="name"
+                class="form__input"
+                placeholder="Nome"
+                required
+              />
+              <input
+                type="text"
+                id="about"
+                class="form__input"
+                placeholder="Sobre mim"
+                required
+              />
+            </fieldset>
+            <button type="submit" class="form__button">Salvar</button>
+          </form>
+        </div>
+        <div class="popup__overlay"></div>
+      </section>
+
       <section class="profile">
         <img src="/images/avatar.png" class="profile__avatar" />
         <div class="profile__name-edit-btn">
@@ -41,6 +75,7 @@
           />
         </button>
       </section>
+
       <main class="content">
         <div class="content__card">
           <img
@@ -133,6 +168,7 @@
           </button>
         </div>
       </main>
+
       <footer class="footer">&copy; 2024 Around The U.S.</footer>
     </div>
   </body>
