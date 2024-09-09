@@ -54,6 +54,7 @@
 
 .profile__add-btn_peq {
   max-width: 150px;
+  max-height: 50px;
   background: none;
   border: none;
   cursor: pointer;
