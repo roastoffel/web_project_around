@@ -40,6 +40,10 @@
   align-self: flex-end;
 }
 
+.profile__edit-btn:hover {
+  opacity: 0.6;
+}
+
 .profile__occupation {
   font-size: 18px;
   color: #ffffff;
@@ -54,7 +58,16 @@
   border: none;
   cursor: pointer;
   padding: 0;
+  margin: 0;
   grid-area: btn-add;
+}
+
+.profile__add-btn_peq:hover {
+  opacity: 0.6;
+}
+
+.profile__add-btn_gde:hover {
+  opacity: 0.6;
 }
 
 .profile__add-btn_gde {

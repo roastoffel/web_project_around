@@ -31,8 +31,13 @@
   bottom: 26px;
 }
 
+.content__card_btn-like:hover {
+  opacity: 0.5;
+}
+
 .content__card_btn-like:active {
   background-image: url(/images/heart-filled.svg);
+  opacity: 1;
 }
 
 .content__card_title {
@@ -47,9 +52,3 @@
   white-space: nowrap;
   overflow: hidden;
 }
-
-/* .content__card_like {
-  position: absolute;
-  right: 20px;
-  bottom: 30px;
-} */
