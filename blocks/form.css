@@ -26,6 +26,9 @@
 }
 
 .popup__container_close-btn {
+  position: fixed;
+  right: -35px;
+  top: -35px;
   cursor: pointer;
   border: none;
   padding: 0;
