@@ -1,33 +1,36 @@
-let botaoEdit = document.querySelector(".profile__edit-btn");
+const editBtn = document.querySelector(".profile__edit-btn");
 
-botaoEdit.addEventListener("click", function () {
-  let popup = document.querySelector(".popup");
+editBtn.addEventListener("click", function () {
+  const popup = document.querySelector(".popup");
   popup.classList.add("popup_opened");
 });
 
-let botaoFecharEdit = document.querySelector(".popup__container_close-btn");
+const editBtnClose = document.querySelector(".popup__container_close-btn");
 
-botaoFecharEdit.addEventListener("click", function () {
-  let popup = document.querySelector(".popup");
+editBtnClose.addEventListener("click", function () {
+  const popup = document.querySelector(".popup");
   popup.classList.remove("popup_opened");
 });
 
-let formElement = document.querySelector("form");
+const formElement = document.querySelector("form");
 
 function handleProfileFormSubmit(evt) {
   evt.preventDefault();
 
-  let nameInput = document.querySelector("input[name='name']");
-  let jobInput = document.querySelector("input[name='job']");
+  const nameInput = document.querySelector("input[name='name']");
+  const jobInput = document.querySelector("input[name='job']");
 
-  let nameValue = nameInput.value;
-  let jobValue = jobInput.value;
+  const nameValue = nameInput.value;
+  const jobValue = jobInput.value;
 
-  let profileNameElement = document.querySelector(".profile__name");
-  let profileJobElement = document.querySelector(".profile__job");
+  const profileNameElement = document.querySelector(".profile__name");
+  const profileJobElement = document.querySelector(".profile__job");
 
   profileNameElement.textContent = nameValue;
   profileJobElement.textContent = jobValue;
+
+  const popup = document.querySelector(".popup");
+  popup.classList.remove("popup_opened");
 }
 
 formElement.addEventListener("submit", handleProfileFormSubmit);
