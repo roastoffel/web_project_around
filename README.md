@@ -15,4 +15,4 @@ Neste layout utilizei algumas quebras para os elementos em determinados tmanhos 
 
 ### Link para Git Pages
 
-https://roastoffel.github.io/web_project_around/
+https://roastoffel.github.io/web_project_around
