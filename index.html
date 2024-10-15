@@ -133,23 +133,23 @@
 
       <footer class="footer">&copy; 2024 Around The U.S.</footer>
 
-      <section id="popup" class="popup">
-        <div class="popup__container">
-          <button type="button" class="popup__container_close-btn">
+      <section id="popup-edit" class="popup-edit">
+        <div class="popup-edit__container">
+          <button type="button" class="popup-edit__container_close-btn">
             <img
               src="./images/close-icon.svg"
               alt="Close icon"
-              class="popup__container_close-icon"
+              class="popup-edit__container_close-icon"
             />
           </button>
-          <h4 class="popup__container_title">Editer perfil</h4>
-          <form class="popup__form form">
-            <fieldset class="form__fieldset">
+          <h4 class="popup-edit__container_title">Editar perfil</h4>
+          <form class="popup-edit__form-edit form-edit">
+            <fieldset class="form-edit__fieldset">
               <input
                 type="text"
                 id="name"
                 name="name"
-                class="form__input form__input_name"
+                class="form-edit__input form-edit__input_name"
                 placeholder="Nome"
                 autocomplete="name"
                 required
@@ -158,15 +158,51 @@
                 type="text"
                 id="job"
                 name="job"
-                class="form__input form__input_job"
+                class="form-edit__input form-edit__input_job"
                 placeholder="Sobre mim"
                 required
               />
             </fieldset>
-            <button type="submit" class="form__button">Salvar</button>
+            <button type="submit" class="form-edit__button">Salvar</button>
           </form>
         </div>
-        <div class="popup__overlay"></div>
+        <div class="popup-edit__overlay"></div>
+      </section>
+
+      <section id="popup-add" class="popup-add">
+        <div class="popup-add__container">
+          <button type="button" class="popup-add__container_close-btn">
+            <img
+              src="./images/close-icon.svg"
+              alt="Close icon"
+              class="popup-add__container_close-icon"
+            />
+          </button>
+          <h4 class="popup-add__container_title">Novo Local</h4>
+          <form class="popup-add__form-add form-add">
+            <fieldset class="form-add__fieldset">
+              <input
+                type="text"
+                id="title"
+                name="title"
+                class="form-add__input form-add__input_name"
+                placeholder="Título"
+                autocomplete="title"
+                required
+              />
+              <input
+                type="text"
+                id="link"
+                name="link"
+                class="form-add__input form-add__input_job"
+                placeholder="Link da imagem"
+                required
+              />
+            </fieldset>
+            <button type="submit" class="form-add__button">Salvar</button>
+          </form>
+        </div>
+        <div class="popup-add__overlay"></div>
       </section>
     </div>
     <script src="./index.js"></script>
