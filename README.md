@@ -1,7 +1,7 @@
 # Tripleten web_project_around
 
 A página Around The U.S. é o sexto projeto do programa de Desenvolvimento Web da Tripleten. Foi feito a partir do layout responsivo fornecido através do Figma.
-Neste layout utilizei algumas quebras para os elementos em determinados tmanhos de dispositivos.
+Neste layout utilizei algumas quebras para os elementos em determinados tmanhos de dispositivos. Também fiz o uso dos scripts para o funcionamento dos formulários.
 
 ## Recursos do projeto
 
