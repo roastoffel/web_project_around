@@ -51,25 +51,82 @@ addBtnClose.addEventListener("click", function () {
   popupAdd.classList.remove("popup-add_opened");
 });
 
-// const formElement = document.querySelector(".form-add");
+////////////////////////
 
-// function handleAddFormSubmit(evt) {
-//   evt.preventDefault();
+const initialCards = [
+  {
+    name: "Vale de Yosemite",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_yosemite.jpg",
+  },
+  {
+    name: "Lago Louise",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_lake-louise.jpg",
+  },
+  {
+    name: "Montanhas Carecas",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_bald-mountains.jpg",
+  },
+  {
+    name: "Latemar",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_latemar.jpg",
+  },
+  {
+    name: "Parque Nacional da Vanoise ",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_vanoise.jpg",
+  },
+  {
+    name: "Lago di Braies",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_lago.jpg",
+  },
+];
 
-//   const titelInput = document.querySelector("input[name='title']");
-//   const linkInput = document.querySelector("input[name='link']");
+const cardList = document.querySelector(".content__list");
+const addCardForm = document.querySelector(".popup-add__form-add");
+const addCardFormTitleInput = addCardForm.querySelector(
+  ".form-add__input_name"
+);
+const addCardFormLinkInput = addCardForm.querySelector(".form-add__input_link");
 
-//   const titleValue = titleInput.value;
-//   const linkValue = linkInput.value;
+// Função para criar um novo card
+function createCard(name, link) {
+  const cardTemplate = document.querySelector("#card-template").content;
+  const cardElement = cardTemplate
+    .querySelector(".content__card")
+    .cloneNode(true);
 
-//   const profileTitleElement = document.querySelector(".profile__title");
-//   const profileLinkElement = document.querySelector(".profile__link");
+  cardElement.querySelector(".content__card_image").src = link;
+  cardElement.querySelector(".content__card_image").alt = name;
+  cardElement.querySelector(".content__card_title").textContent = name;
 
-//   profileTitleElement.textContent = titleValue;
-//   profileLinkElement.textContent = linkValue;
+  const trashButton = cardElement.querySelector(".content__card_btn-trash");
+  trashButton.addEventListener("click", () => {
+    cardElement.remove();
+  });
 
-//   const popupEdit = document.querySelector(".popup-add");
-//   popupEdit.classList.remove("popup-add_opened");
-// }
+  return cardElement;
+}
 
-// formElement.addEventListener("submit", handleAddFormSubmit);
+// Função para adicionar um novo card à lista
+function addCard(name, link) {
+  const newCard = createCard(name, link);
+  cardList.append(newCard);
+}
+
+// Remove todos os cards existentes no HTML
+const existingCards = cardList.querySelectorAll(".content__card");
+existingCards.forEach((card) => card.remove());
+
+// Adiciona os cards iniciais
+initialCards.forEach((card) => {
+  addCard(card.name, card.link);
+});
+
+// Event listener para o formulário de adicionar card
+addCardForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const title = addCardFormTitleInput.value;
+  const link = addCardFormLinkInput.value;
+  addCard(title, link);
+  addCardForm.reset();
+  // Aqui você pode adicionar o código para fechar o popup
+});

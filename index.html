@@ -14,6 +14,27 @@
         <div class="line"></div>
       </header>
 
+      <template id="card-template">
+        <li class="content__card">
+          <img src="" alt="" class="content__card_image" />
+          <h3 class="content__card_title"></h3>
+          <button type="button" class="content__card_btn-trash">
+            <img
+              src="./images/trash.svg"
+              alt="Botão lixo"
+              class="content__card_trash"
+            />
+          </button>
+          <button type="button" class="content__card_btn-like">
+            <img
+              src="./images/heart.svg"
+              alt="Botão Curtir"
+              class="content__card_like"
+            />
+          </button>
+        </li>
+      </template>
+
       <nav class="profile">
         <img src="./images/avatar.png" alt="Avatar" class="profile__avatar" />
         <div class="profile__name-edit-btn">
@@ -236,7 +257,7 @@
                 type="text"
                 id="link"
                 name="link"
-                class="form-add__input form-add__input_job"
+                class="form-add__input form-add__input_link"
                 placeholder="Link da imagem"
                 required
               />
