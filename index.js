@@ -51,8 +51,6 @@ addBtnClose.addEventListener("click", function () {
   popupAdd.classList.remove("popup-add_opened");
 });
 
-////////////////////////
-
 const initialCards = [
   {
     name: "Vale de Yosemite",
@@ -87,7 +85,6 @@ const addCardFormTitleInput = addCardForm.querySelector(
 );
 const addCardFormLinkInput = addCardForm.querySelector(".form-add__input_link");
 
-// Função para criar um novo card
 function createCard(name, link) {
   const cardTemplate = document.querySelector("#card-template").content;
   const cardElement = cardTemplate
@@ -113,32 +110,43 @@ function createCard(name, link) {
     }
   });
 
+  const cardImage = cardElement.querySelector(".content__card_image");
+  cardImage.addEventListener("click", () => {
+    const popup = document.getElementById("popup-image");
+    const popupImage = popup.querySelector(".popup-image__image");
+    popupImage.src = link;
+    popupImage.alt = name;
+    popup.style.display = "block"; // Exibe o popup
+  });
+
   return cardElement;
 }
 
-// Função para adicionar um novo card à lista
+const popupCloseButton = document.querySelector(".popup-image__close-btn");
+popupCloseButton.addEventListener("click", () => {
+  const popup = document.getElementById("popup-image");
+  popup.style.display = "none";
+});
+
 function addCard(name, link) {
   const newCard = createCard(name, link);
   cardList.append(newCard);
 }
 
-// Remove todos os cards existentes no HTML
 const existingCards = cardList.querySelectorAll(".content__card");
 existingCards.forEach((card) => card.remove());
 
-// Adiciona os cards iniciais
 initialCards.forEach((card) => {
   addCard(card.name, card.link);
 });
 
-// Event listener para o formulário de adicionar card
 addCardForm.addEventListener("submit", (event) => {
   event.preventDefault();
   const title = addCardFormTitleInput.value;
   const link = addCardFormLinkInput.value;
   addCard(title, link);
   addCardForm.reset();
-  // Aqui você pode adicionar o código para fechar o popup
+
   const popupAdd = document.querySelector(".popup-add");
   popupAdd.classList.remove("popup-add_opened");
 });
