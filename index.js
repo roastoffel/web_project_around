@@ -103,6 +103,16 @@ function createCard(name, link) {
     cardElement.remove();
   });
 
+  const likeButton = cardElement.querySelector(".content__card_btn-like");
+  likeButton.addEventListener("click", () => {
+    const likeIcon = likeButton.querySelector(".content__card_like");
+    if (likeIcon.src.endsWith("/images/heart.svg")) {
+      likeIcon.src = "./images/heart-filled.svg";
+    } else {
+      likeIcon.src = "./images/heart.svg";
+    }
+  });
+
   return cardElement;
 }
 
@@ -129,4 +139,6 @@ addCardForm.addEventListener("submit", (event) => {
   addCard(title, link);
   addCardForm.reset();
   // Aqui você pode adicionar o código para fechar o popup
+  const popupAdd = document.querySelector(".popup-add");
+  popupAdd.classList.remove("popup-add_opened");
 });
