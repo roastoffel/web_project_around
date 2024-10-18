@@ -55,26 +55,32 @@ const initialCards = [
   {
     name: "Vale de Yosemite",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_yosemite.jpg",
+    "data-name": "Vale de Yosemite",
   },
   {
     name: "Lago Louise",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_lake-louise.jpg",
+    "data-name": "Lago Louise",
   },
   {
     name: "Montanhas Carecas",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_bald-mountains.jpg",
+    "data-name": "Montanhas Carecas",
   },
   {
     name: "Latemar",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_latemar.jpg",
+    "data-name": "Latemar",
   },
   {
-    name: "Parque Nacional da Vanoise ",
+    name: "Parque Nacional da Vanoise",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_vanoise.jpg",
+    "data-name": "Parque Nacional da Vanoise",
   },
   {
     name: "Lago di Braies",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_lago.jpg",
+    "data-name": "Lago di Braies",
   },
 ];
 
@@ -93,6 +99,7 @@ function createCard(name, link) {
 
   cardElement.querySelector(".content__card_image").src = link;
   cardElement.querySelector(".content__card_image").alt = name;
+  cardElement.querySelector(".content__card_image").dataset.name = name;
   cardElement.querySelector(".content__card_title").textContent = name;
 
   const trashButton = cardElement.querySelector(".content__card_btn-trash");
@@ -114,9 +121,11 @@ function createCard(name, link) {
   cardImage.addEventListener("click", () => {
     const popup = document.getElementById("popup-image");
     const popupImage = popup.querySelector(".popup-image__image");
+    const popupText = popup.querySelector(".popup-image__text");
     popupImage.src = link;
     popupImage.alt = name;
-    popup.style.display = "block"; // Exibe o popup
+    popupText.textContent = cardImage.dataset.name;
+    popup.style.display = "block";
   });
 
   return cardElement;

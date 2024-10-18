@@ -116,6 +116,14 @@
   width: 40px;
 }
 
+.popup-image__text {
+  font-family: "Inter Regular", sans-serif;
+  font-size: 12px;
+  color: #ffffff;
+  position: absolute;
+  bottom: -40px;
+}
+
 @media (max-width: 796px) {
   .popup-image__image {
     max-width: 100%;
