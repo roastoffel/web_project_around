@@ -139,7 +139,7 @@ popupCloseButton.addEventListener("click", () => {
 
 function addCard(name, link) {
   const newCard = createCard(name, link);
-  cardList.append(newCard);
+  cardList.prepend(newCard);
 }
 
 const existingCards = cardList.querySelectorAll(".content__card");
