@@ -14,7 +14,7 @@
   background-color: #ffffff;
   top: 50%;
   left: 50%;
-  padding: 20px 36px 36px;
+  padding: 34px 36px 37px;
   transform: translate(-50%, -50%);
   z-index: 999;
 }
@@ -31,6 +31,7 @@
   top: -35px;
   cursor: pointer;
   border: none;
+  background: transparent;
   padding: 0;
 }
 
@@ -56,103 +57,6 @@
   padding: 0;
 }
 
-.form-edit {
-  display: flex;
-  flex-direction: column;
-}
-
-.form-edit__fieldset {
-  margin: 0 auto;
-  padding: 0;
-  border: none;
-}
-
-.form-edit__input {
-  font-family: "Inter Regular", sans-serif;
-  font-size: 14px;
-  color: #000;
-  width: 100%;
-  border: none;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  margin-bottom: 30px;
-  padding: 0;
-}
-
-.form-edit__button {
-  height: 50px;
-  border-radius: 2px;
-  border: none;
-  background-color: #000;
-  color: #ffffff;
-  margin: 18px 0 0;
-  padding: 0;
-  font-family: "Inter Regular", sans-serif;
-  font-size: 18px;
-  cursor: pointer;
-}
-
-.form-edit__button:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-.form-edit__input_type_error {
-  border-bottom-color: #ff0000;
-}
-
-.form-edit__input-error {
-  font-family: "Inter Regular", sans-serif;
-  font-size: 12px;
-  color: #ff0000;
-  min-height: 30px;
-  display: block;
-}
-
-.form-edit__input-error_active {
-  visibility: visible;
-}
-
-.form-edit__button_inactive {
-  background-color: #ccc;
-  color: #000;
-  opacity: 0.2;
-  cursor: not-allowed;
-}
-
-@media screen and (max-width: 680px) {
-  .popup-edit__container {
-    max-width: 238px;
-    max-height: 322px;
-    padding: 0;
-    padding: 25px 25px 22px;
-  }
-
-  .popup-edit__container_close-icon {
-    width: 26px;
-    right: 0;
-    top: -45px;
-  }
-
-  .popup-edit__container_title {
-    margin: 0 0 76px;
-    font-size: 18px;
-  }
-
-  .form-edit__fieldset {
-    margin: 0 auto;
-  }
-
-  .form-edit__input {
-    width: 238px;
-    margin: 0 auto 30px;
-  }
-
-  .form-edit__button {
-    width: 238px;
-    height: 46px;
-    margin: 16px 0 0;
-  }
-}
-
 .popup-add {
   display: none;
 }
@@ -169,7 +73,7 @@
   background-color: #ffffff;
   top: 50%;
   left: 50%;
-  padding: 20px 36px 36px;
+  padding: 34px 36px 37px;
   transform: translate(-50%, -50%);
   z-index: 999;
 }
@@ -186,6 +90,7 @@
   top: -35px;
   cursor: pointer;
   border: none;
+  background: transparent;
   padding: 0;
 }
 
@@ -211,76 +116,101 @@
   padding: 0;
 }
 
-.form-add {
+.form {
   display: flex;
   flex-direction: column;
 }
 
-.form-add__fieldset {
-  margin: 0 auto;
+.form__fieldset {
+  margin: 0;
   padding: 0;
   border: none;
 }
 
-.form-add__input {
+.form__input {
   font-family: "Inter Regular", sans-serif;
   font-size: 14px;
   color: #000;
   width: 100%;
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 0 0 13px;
   margin-bottom: 30px;
-  padding: 0;
 }
 
-.form-add__button {
+.form__input:last-of-type {
+  margin-bottom: 0;
+}
+
+.form__button {
   height: 50px;
   border-radius: 2px;
   border: none;
   background-color: #000;
   color: #ffffff;
-  margin: 18px 0 0;
+  margin: 48px 0 0;
   padding: 0;
   font-family: "Inter Regular", sans-serif;
   font-size: 18px;
   cursor: pointer;
 }
 
-.form-add__button:hover {
+.form__button:hover {
   background-color: rgba(0, 0, 0, 0.8);
 }
 
+.form__input_type_error {
+  border-bottom-color: #ff0000;
+}
+
+.form__input-error {
+  font-family: "Inter Regular", sans-serif;
+  font-size: 12px;
+  color: #ff0000;
+  min-height: 30px;
+  display: block;
+  position: absolute;
+  visibility: hidden;
+}
+
+.form__input-error_active {
+  visibility: visible;
+}
+
+.form__button_inactive {
+  background-color: #ffffff;
+  color: #000;
+  opacity: 0.2;
+  cursor: not-allowed;
+  border: 1px solid #000;
+}
+
 @media screen and (max-width: 680px) {
+  .popup-edit__container,
   .popup-add__container {
-    max-width: 238px;
-    max-height: 322px;
-    padding: 0;
-    padding: 25px 25px 22px;
+    max-width: 282px;
+    padding: 25px 22px;
   }
 
-  .popup-add__container_close-icon {
-    width: 26px;
-    right: 0;
+  .popup-edit__container_close-btn,
+  .popup-add__container_close-btn {
+    right: 5px;
     top: -45px;
   }
 
+  .popup-edit__container_close-icon,
+  .popup-add__container_close-icon {
+    width: 26px;
+  }
+
+  .popup-edit__container_title,
   .popup-add__container_title {
-    margin: 0 0 76px;
+    margin: 0 0 75px;
     font-size: 18px;
   }
 
-  .form-add__fieldset {
-    margin: 0 auto;
-  }
-
-  .form-add__input {
-    width: 238px;
-    margin: 0 auto 30px;
-  }
-
-  .form-add__button {
-    width: 238px;
+  .form__button {
     height: 46px;
-    margin: 16px 0 0;
+    margin-top: 45px;
   }
 }

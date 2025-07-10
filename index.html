@@ -212,33 +212,33 @@
             />
           </button>
           <h4 class="popup-edit__container_title">Editar perfil</h4>
-          <form class="popup-edit__form-edit form-edit" novalidate>
-            <fieldset class="form-edit__fieldset">
+          <form class="popup-edit__form-edit form" novalidate>
+            <fieldset class="form__fieldset">
               <input
                 type="text"
                 id="name"
                 name="name"
-                class="form-edit__input form-edit__input_name"
+                class="form__input form__input_name"
                 placeholder="Nome"
                 autocomplete="name"
                 required
                 minlength="2"
                 maxlength="40"
               />
-              <span class="form-edit__input-error name-input-error"></span>
+              <span class="form__input-error name-input-error"></span>
               <input
                 type="text"
                 id="job"
                 name="job"
-                class="form-edit__input form-edit__input_job"
+                class="form__input form__input_job"
                 placeholder="Sobre mim"
                 required
                 minlength="2"
                 maxlength="200"
               />
-              <span class="form-edit__input-error job-input-error"></span>
+              <span class="form__input-error job-input-error"></span>
             </fieldset>
-            <button type="submit" class="form-edit__button">Salvar</button>
+            <button type="submit" class="form__button">Salvar</button>
           </form>
         </div>
         <div class="popup-edit__overlay"></div>
@@ -254,27 +254,31 @@
             />
           </button>
           <h4 class="popup-add__container_title">Novo Local</h4>
-          <form class="popup-add__form-add form-add">
-            <fieldset class="form-add__fieldset">
+          <form class="popup-add__form-add form" novalidate>
+            <fieldset class="form__fieldset">
               <input
                 type="text"
                 id="title"
                 name="title"
-                class="form-add__input form-add__input_name"
+                class="form__input form__input_name"
                 placeholder="Título"
-                autocomplete="title"
+                autocomplete="off"
                 required
+                minlength="2"
+                maxlength="30"
               />
+              <span class="form__input-error title-input-error"></span>
               <input
-                type="text"
+                type="url"
                 id="link"
                 name="link"
-                class="form-add__input form-add__input_link"
+                class="form__input form__input_link"
                 placeholder="Link da imagem"
                 required
               />
+              <span class="form__input-error link-input-error"></span>
             </fieldset>
-            <button type="submit" class="form-add__button">Criar</button>
+            <button type="submit" class="form__button">Criar</button>
           </form>
         </div>
         <div class="popup-add__overlay"></div>

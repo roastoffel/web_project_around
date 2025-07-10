@@ -12,7 +12,7 @@ editBtnClose.addEventListener("click", function () {
   popupEdit.classList.remove("popup-edit_opened");
 });
 
-const formElement = document.querySelector(".form-edit");
+const formElement = document.querySelector(".popup-edit__form-edit");
 
 function handleProfileFormSubmit(evt) {
   evt.preventDefault();
@@ -86,10 +86,8 @@ const initialCards = [
 
 const cardList = document.querySelector(".content__list");
 const addCardForm = document.querySelector(".popup-add__form-add");
-const addCardFormTitleInput = addCardForm.querySelector(
-  ".form-add__input_name"
-);
-const addCardFormLinkInput = addCardForm.querySelector(".form-add__input_link");
+const addCardFormTitleInput = addCardForm.querySelector(".form__input_name");
+const addCardFormLinkInput = addCardForm.querySelector(".form__input_link");
 
 function createCard(name, link) {
   const cardTemplate = document.querySelector("#card-template").content;
@@ -161,10 +159,10 @@ addCardForm.addEventListener("submit", (event) => {
 });
 
 enableValidation({
-  formSelector: ".form-edit",
-  inputSelector: ".form-edit__input",
-  submitButtonSelector: ".form-edit__button",
-  inactiveButtonClass: "form-edit__button_inactive",
-  inputErrorClass: "form-edit__input_type_error",
-  errorClass: "form-edit__input-error_active",
+  formSelector: ".form",
+  inputSelector: ".form__input",
+  submitButtonSelector: ".form__button",
+  inactiveButtonClass: "form__button_inactive",
+  inputErrorClass: "form__input_type_error",
+  errorClass: "form__input-error_active",
 });
