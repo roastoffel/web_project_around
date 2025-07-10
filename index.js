@@ -24,12 +24,23 @@ const cardLinkInput = cardForm.querySelector(".form__input_link");
 const popupImageElement = popupImage.querySelector(".popup-image__image");
 const popupImageText = popupImage.querySelector(".popup-image__text");
 
+function handleEscClose(evt) {
+  if (evt.key === "Escape") {
+    const openedPopup = document.querySelector(".popup_opened");
+    if (openedPopup) {
+      closePopup(openedPopup);
+    }
+  }
+}
+
 function openPopup(popup) {
   popup.classList.add("popup_opened");
+  document.addEventListener("keydown", handleEscClose);
 }
 
 function closePopup(popup) {
   popup.classList.remove("popup_opened");
+  document.removeEventListener("keydown", handleEscClose);
 }
 
 profileEditBtn.addEventListener("click", () => {
@@ -44,10 +55,7 @@ cardAddBtn.addEventListener("click", () => {
 
 allPopups.forEach((popup) => {
   popup.addEventListener("mousedown", (evt) => {
-    if (
-      evt.target.classList.contains("popup_opened") ||
-      evt.target.classList.contains("popup-image__close-btn")
-    ) {
+    if (evt.target === evt.currentTarget) {
       closePopup(popup);
     }
   });
