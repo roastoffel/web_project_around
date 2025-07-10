@@ -1,103 +1,46 @@
-.popup-edit {
+.popup-edit,
+.popup-add {
   display: none;
-}
-
-.popup-edit.popup-edit_opened {
-  display: block;
-}
-
-.popup-edit__container {
-  position: fixed;
-  max-width: 430px;
-  max-height: 330px;
-  border-radius: 10px;
-  background-color: #ffffff;
-  top: 50%;
-  left: 50%;
-  padding: 34px 36px 37px;
-  transform: translate(-50%, -50%);
-  z-index: 999;
-}
-
-.popup-edit__container_close-icon {
-  position: fixed;
-  right: -35px;
-  top: -35px;
-}
-
-.popup-edit__container_close-btn {
-  position: fixed;
-  right: -35px;
-  top: -35px;
-  cursor: pointer;
-  border: none;
-  background: transparent;
-  padding: 0;
-}
-
-.popup-edit__container_close-btn:hover {
-  opacity: 0.6;
-}
-
-.popup-edit__overlay {
+  align-items: center;
+  justify-content: center;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: black;
-  opacity: 0.5;
-  z-index: 998;
 }
 
-.popup-edit__container_title {
-  font-family: "Inter Black", sans-serif;
-  font-size: 24px;
-  margin: 0 0 54px;
-  padding: 0;
+.popup_opened {
+  display: flex;
 }
 
-.popup-add {
-  display: none;
-}
-
-.popup-add.popup-add_opened {
-  display: block;
-}
-
+.popup-edit__container,
 .popup-add__container {
-  position: fixed;
+  position: relative;
   max-width: 430px;
-  max-height: 330px;
-  border-radius: 10px;
   background-color: #ffffff;
-  top: 50%;
-  left: 50%;
+  border-radius: 10px;
   padding: 34px 36px 37px;
-  transform: translate(-50%, -50%);
   z-index: 999;
 }
 
-.popup-add__container_close-icon {
-  position: fixed;
-  right: -35px;
-  top: -35px;
-}
-
+.popup-edit__container_close-btn,
 .popup-add__container_close-btn {
-  position: fixed;
-  right: -35px;
-  top: -35px;
+  position: absolute;
+  top: -40px;
+  right: -40px;
   cursor: pointer;
   border: none;
   background: transparent;
   padding: 0;
 }
 
+.popup-edit__container_close-btn:hover,
 .popup-add__container_close-btn:hover {
   opacity: 0.6;
 }
 
+.popup-edit__overlay,
 .popup-add__overlay {
   position: fixed;
   top: 0;
@@ -109,11 +52,13 @@
   z-index: 998;
 }
 
+.popup-edit__container_title,
 .popup-add__container_title {
   font-family: "Inter Black", sans-serif;
   font-size: 24px;
   margin: 0 0 54px;
   padding: 0;
+  color: #000;
 }
 
 .form {
@@ -190,12 +135,13 @@
   .popup-add__container {
     max-width: 282px;
     padding: 25px 22px;
+    margin: 0 19px;
   }
 
   .popup-edit__container_close-btn,
   .popup-add__container_close-btn {
-    right: 5px;
-    top: -45px;
+    right: 0;
+    top: -42px;
   }
 
   .popup-edit__container_close-icon,
