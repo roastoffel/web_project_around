@@ -212,7 +212,7 @@
             />
           </button>
           <h4 class="popup-edit__container_title">Editar perfil</h4>
-          <form class="popup-edit__form-edit form-edit">
+          <form class="popup-edit__form-edit form-edit" novalidate>
             <fieldset class="form-edit__fieldset">
               <input
                 type="text"
@@ -222,7 +222,10 @@
                 placeholder="Nome"
                 autocomplete="name"
                 required
+                minlength="2"
+                maxlength="40"
               />
+              <span class="form-edit__input-error name-input-error"></span>
               <input
                 type="text"
                 id="job"
@@ -230,7 +233,10 @@
                 class="form-edit__input form-edit__input_job"
                 placeholder="Sobre mim"
                 required
+                minlength="2"
+                maxlength="200"
               />
+              <span class="form-edit__input-error job-input-error"></span>
             </fieldset>
             <button type="submit" class="form-edit__button">Salvar</button>
           </form>
@@ -288,6 +294,7 @@
         <div class="popup-image__overlay"></div>
       </section>
     </div>
+    <script src="./validate.js"></script>
     <script src="./index.js"></script>
   </body>
 </html>

@@ -159,3 +159,12 @@ addCardForm.addEventListener("submit", (event) => {
   const popupAdd = document.querySelector(".popup-add");
   popupAdd.classList.remove("popup-add_opened");
 });
+
+enableValidation({
+  formSelector: ".form-edit",
+  inputSelector: ".form-edit__input",
+  submitButtonSelector: ".form-edit__button",
+  inactiveButtonClass: "form-edit__button_inactive",
+  inputErrorClass: "form-edit__input_type_error",
+  errorClass: "form-edit__input-error_active",
+});
